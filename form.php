@@ -55,7 +55,7 @@ class Category_Form extends moodleform
 
         $mform->addElement(
             'filemanager',
-            'file_img',
+            'courseimage',
             get_string('image', 'itimgcourse'),
             null,
             array(
@@ -127,7 +127,7 @@ class Course_Form extends moodleform
         $mform->addElement('html', '</select></div></div>'."\n");
         $mform->addElement(
             'filemanager',
-            'file_img',
+            'courseimage',
             get_string('image', 'itimgcourse'),
             null,
             array(

@@ -71,13 +71,13 @@ if (empty($accion)) {
                 $entry = new stdClass;
                 $entry->id = $category_id;
             }
-            
-            $draftitemid = file_get_submitted_draft_itemid('file_img');
+
+            $draftitemid = file_get_submitted_draft_itemid('courseimage');
             file_prepare_draft_area(
                 $draftitemid,
                 $context->id,
                 'mod_itimgcourse',
-                'file_img',
+                'courseimage',
                 $entry->id,
                 array(
                     'subdirs' => 0,
@@ -90,10 +90,10 @@ if (empty($accion)) {
             $mform->set_data($entry);
 
             $file = file_save_draft_area_files(
-                $dataform->file_img,
+                $dataform->courseimage,
                 $context->id,
                 'mod_itimgcourse',
-                'file_img',
+                'courseimage',
                 $entry->id,
                 array(
                     'subdirs' => 0,
@@ -106,12 +106,13 @@ if (empty($accion)) {
             $file_o = $fs->get_area_files(
                 $context->id,
                 'mod_itimgcourse',
-                'file_img',
+                'courseimage',
                 $entry->id
             );
             foreach ($file_o as $f) {
                 $filename = $f->get_filename();
             }
+
             //data
             $dataform->itemid = $category_id;
             $dataform->type = $accion;
@@ -137,15 +138,15 @@ if (empty($accion)) {
             //image
             if (empty($entry->id)) {
                 $entry = new stdClass;
-                $entry->id = $course_id;
+                $entry->id = $course_id+9000;
             }
 
-            $draftitemid = file_get_submitted_draft_itemid('file_img');
+            $draftitemid = file_get_submitted_draft_itemid('courseimage');
             file_prepare_draft_area(
                 $draftitemid,
                 $context->id,
                 'mod_itimgcourse',
-                'file_img',
+                'courseimage',
                 $entry->id,
                 array(
                     'subdirs' => 0,
@@ -158,10 +159,10 @@ if (empty($accion)) {
             $mform->set_data($entry);
 
             $file = file_save_draft_area_files(
-                $dataform->file_img,
+                $dataform->courseimage,
                 $context->id,
                 'mod_itimgcourse',
-                'file_img',
+                'courseimage',
                 $entry->id,
                 array(
                     'subdirs' => 0,
@@ -174,7 +175,7 @@ if (empty($accion)) {
             $file_o = $fs->get_area_files(
                 $context->id,
                 'mod_itimgcourse',
-                'file_img',
+                'courseimage',
                 $entry->id
             );
             foreach ($file_o as $f) {
